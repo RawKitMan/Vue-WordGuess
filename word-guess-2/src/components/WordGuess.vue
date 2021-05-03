@@ -11,30 +11,29 @@
        
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 import { BJumbotron,
          BImg,
          BContainer
         } from 'bootstrap-vue';
 
-export default {
-    name: 'WordGuess',
+@Component({
     components: {
         BJumbotron,
         BImg,
-        BContainer
+        BContainer,
     },
-    data: function() {
-        return {
-            imageIndex: 0,
-            imageArr: ['kefka.jpg', 'cloud.jpg', 'tidus.jpg'],
-            imgStr: "@/assets/"
-        }
-    },
-    computed: {
-        wordImage: function() {
-            return this.imgStr + this.imageArr[this.imageIndex];
-        }
+})
+export default class WordGuess extends Vue{
+
+
+    public imageIndex = 0;
+    public imageArr = ['kefka.jpg', 'cloud.jpg', 'tidus.jpg'];
+    public imgStr = "@/assets/";
+
+    get wordImage() {        
+        return this.imgStr + this.imageArr[this.imageIndex];        
     }
 }
 </script>

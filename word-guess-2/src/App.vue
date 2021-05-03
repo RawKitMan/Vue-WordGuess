@@ -4,17 +4,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 import WordGuess from './components/WordGuess.vue';
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 
-export default {
-  name: 'App',
+@Component({
   components: {
-    WordGuess
-  }
-}
+    WordGuess,
+  },
+})
+export default class App extends Vue {}
 </script>
 
 <style>
